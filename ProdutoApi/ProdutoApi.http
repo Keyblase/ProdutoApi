@@ -1,6 +1,41 @@
 @ProdutoApi_HostAddress = http://localhost:5279
 
-GET {{ProdutoApi_HostAddress}}/weatherforecast/
+### Listar todos os produtos
+GET {{ProdutoApi_HostAddress}}/api/produto
 Accept: application/json
 
 ###
+
+### Buscar produto por ID
+GET {{ProdutoApi_HostAddress}}/api/produto/1
+Accept: application/json
+
+###
+
+### Buscar produto por nome
+GET {{ProdutoApi_HostAddress}}/api/produto/buscar/{nome}
+Accept: application/json
+
+###
+
+### Contar produtos
+GET {{ProdutoApi_HostAddress}}/api/produto/contar
+Accept: application/json
+
+###
+
+### Cadastrar um novo produto
+POST {{ProdutoApi_HostAddress}}/api/produto
+Content-Type: application/json
+
+{
+  "id": 0,
+  "nome": "Produto Exemplo",
+  "preco": 100.0
+}
+
+###
+
+### Deletar produto por ID
+DELETE {{ProdutoApi_HostAddress}}/api/produto/1
+Accept: application/json
