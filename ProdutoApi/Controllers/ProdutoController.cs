@@ -39,5 +39,15 @@ namespace ProdutoApi.Controllers
             service.Deletar(id);
             return NoContent();
         }
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] Produto produto)
+        {
+            var produtoExistente = service.BuscarPorId(id);
+            if (produtoExistente == null) return NotFound();
+
+            produto.Id = id; // Garante que o ID da rota é usado
+            service.Atualizar(produto);
+            return NoContent();
+        }
     }
 }

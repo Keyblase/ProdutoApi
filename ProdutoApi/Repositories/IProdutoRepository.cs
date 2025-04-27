@@ -11,5 +11,7 @@ namespace ProdutoApi.Repositories
         void Adicionar(Produto produto);
         void Remover(int id);
         long Contar();
+        void Update(Produto produto);
+        void SaveChanges();
     }
 }
